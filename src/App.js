@@ -7,6 +7,7 @@ import Toppings from './components/Toppings';
 import Order from './components/Order';
 
 function App() {
+  
   const [pizza, setPizza] = useState({ base: "", toppings: [] });
 
   const addBase = (base) => {
