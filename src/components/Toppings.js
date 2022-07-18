@@ -1,18 +1,18 @@
 import React from 'react';
-import {motion} from 'framer-motion';
+import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 
-const containerVariant={
-  hidden:{
-    opacity:0,
-    x:'100vw'
+const containerVariant = {
+  hidden: {
+    opacity: 0,
+    x: '100vw'
   },
-  visible:{
-    opacity:1,
-    x:0,
-    transition:{
-      type:'spring',
-      delay:.75
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      type: 'spring',
+      delay: .25
     }
   }
 }
@@ -22,17 +22,17 @@ const Toppings = ({ addTopping, pizza }) => {
 
   return (
     <motion.div className="toppings container"
-    variants={containerVariant}
-    initial="hidden"
-    animate="visible">
-      
+      variants={containerVariant}
+      initial="hidden"
+      animate="visible">
+
       <h3>Step 2: Choose Toppings</h3>
       <ul>
         {toppings.map(topping => {
           let spanClass = pizza.toppings.includes(topping) ? 'active' : '';
           return (
             <li key={topping} onClick={() => addTopping(topping)}>
-              <span className={spanClass}>{ topping }</span>
+              <span className={spanClass}>{topping}</span>
             </li>
           )
         })}
