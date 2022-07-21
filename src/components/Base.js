@@ -12,7 +12,7 @@ const containerVariant = {
     x: 0,
     transition: {
       type: 'spring',
-      delay: 1.5
+      delay: .25
     }
   }
 }
@@ -37,7 +37,8 @@ const Base = ({ addBase, pizza }) => {
     <motion.div className="base container"
       variants={containerVariant}
       initial="hidden"
-      animate="visible">
+      animate="visible"
+      exit={{x:'-100vw',transition: {ease:'easeInOut',duration:.25}}}>
 
       <h3>Step 1: Choose Your Base</h3>
       <ul>

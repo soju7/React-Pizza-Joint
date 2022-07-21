@@ -24,7 +24,8 @@ const Toppings = ({ addTopping, pizza }) => {
     <motion.div className="toppings container"
       variants={containerVariant}
       initial="hidden"
-      animate="visible">
+      animate="visible"
+      exit={{ x: '-100vw', transition: { ease: 'easeInOut', duration: .25 } }}>
 
       <h3>Step 2: Choose Toppings</h3>
       <ul>
